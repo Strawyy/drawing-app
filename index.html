@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Main Page</title>
+</head>
+<body>
+    <div id="white_bg"></div> 
+    <div class="sidebar">
+
+        <div class="divider" style="margin-bottom: 10px;"></div>
+        <div class="title"><h2 style="color: #f7f7f8;">B A S E</h2></div>
+        <div class="sidebar_btns">
+            <a href="./solids.html?myVar=cube" target="_blank"><button class="sidebar_button font-lucida"><i class="fa-solid fa-shapes icon"></i> Cube</button></a>
+            <a href="./solids.html?myVar=pyramid" target="_blank"><button class="sidebar_button font-lucida"><i class="fa-solid fa-shapes icon"></i> Pyramid</button></a>
+            <a href="./solids.html?myVar=cylinder" target="_blank"><button class="sidebar_button font-lucida"><i class="fa-solid fa-shapes icon"></i> Cylinder</button></a>
+            <a href="./solids.html?myVar=pentagon" target="_blank"><button class="sidebar_button font-lucida"><i class="fa-solid fa-shapes icon"></i> Pentagon</button></a>
+        </div>
+
+        <div class="title"><h2 style="color: aliceblue;">S A V E D</h2></div>
+        <div id="db_buttons" class="sidebar_btns">
+            <a href="./solids.html" target="_blank"><button class="sidebar_button font-lucida"><i class="fa-solid fa-dice-d6 icon"></i>Dis 1</button></a>    
+            <a href="./solids.html" target="_blank"><button class="sidebar_button font-lucida"><i class="fa-solid fa-dice-d6 icon"></i>Dis 2</button></a>    
+            <a href="./solids.html" target="_blank"><button class="sidebar_button font-lucida"><i class="fa-solid fa-dice-d6 icon"></i>Dis 3</button></a>    
+
+        </div>
+
+        <div class="divider" style="margin-top: 30px; position: relative; margin-bottom: 30px;"></div>
+        
+        <button id="readButton" class="sidebar_button font-lucida" style="display: none;">Readfile</button>
+        <a href="./server.html" target="_blank"><button class="sidebar_button font-lucida">Server</button></a>
+        <p id="text_value" class="font-lucida" style="color: #f7f7f8; display: none;"></p>
+        <p id="outputText" class="font-lucida" style="color: #f7f7f8; display: none;"></p>
+    </div>
+    <div class="upbar">
+        <h1>O R T O G O N A L &nbsp;&nbsp;&nbsp;  P R O J E C T I O N S</h1>
+       
+        
+    </div>
+    <div class="content">
+        <div class="side_btns">
+            <h2>M O D E</h2>
+            <button id="b1" class="button " onclick="drawPoints()" style="background-color: #aaa;"><i class="fa-solid fa-pencil icon"></i>Points</button>
+            <button id="b2" class="button" onclick="drawEdges()"><i class="fa-solid fa-draw-polygon icon"></i>Edges</button>
+        </div>
+        <div class="drawing-container">
+            <h1 id="resize_error" class="font-lucida">D R A W&nbsp; A L L&nbsp; P O I N T S &nbsp; B E F O R E&nbsp; R E S I Z I N G</h1>
+            <h1 id="drawing_error" class="font-lucida">O P E N&nbsp; F U L L &nbsp;S C R E E N</h1>
+
+            <div id="red_bg"></div>
+            <div class="drawing">
+                <canvas id="canvas"></canvas>
+            </div>
+            <button id="downsize-btn" class="button" onclick="downsize()"><i class="fa-solid fa-compress"></i></button>
+        </div>
+        
+        
+        <div class="bottom_btn">
+            <div class="base_btn">
+                <button class="button font-lucida" onclick="clear_canvas()" style="background-color: #e68565;"><i class="fa-solid fa-trash-can icon"></i>Reset</button>
+                <button id="save_btn" onclick="changeText()" class="button font-lucida"><i class="fa-solid fa-floppy-disk icon"></i>Save</button>
+            </div>
+            <div class="base_btn">
+                <a id="solids_link" href="./solids.html" target="_blank"><button onclick="change_href()" id="projections_btn" class="button font-lucida"><i class="fa-solid fa-dice-d20 icon"></i>Projections</button></a>
+                <button class="button font-lucida" onclick="resize_canvas(1)"><i class="fa-solid fa-expand"></i></button>
+            </div>
+            
+        </div>
+        
+    </div>
+    <script src="drawing.js"></script>
+    <script src="server.js"></script>
+</body>
+</html>
